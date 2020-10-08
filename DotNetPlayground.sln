@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIoCContainer", "src\MyIoC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDisposable", "src\IDisposable\IDisposable.csproj", "{50D6FEE1-9F8C-405A-80C7-8150CE58B4AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandler", "src\EventHandler\EventHandler.csproj", "{886F2602-CD2D-4D94-B2BB-28C2D851A941}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{35C7FD7F-1EC9-4BD9-A862-E3C616C668A5} = {26CCE26E-7E0E-4C7D-9551-2BFB11AFDB2E}
 		{50D6FEE1-9F8C-405A-80C7-8150CE58B4AD} = {26CCE26E-7E0E-4C7D-9551-2BFB11AFDB2E}
+		{886F2602-CD2D-4D94-B2BB-28C2D851A941} = {26CCE26E-7E0E-4C7D-9551-2BFB11AFDB2E}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{35C7FD7F-1EC9-4BD9-A862-E3C616C668A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +27,9 @@ Global
 		{50D6FEE1-9F8C-405A-80C7-8150CE58B4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50D6FEE1-9F8C-405A-80C7-8150CE58B4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50D6FEE1-9F8C-405A-80C7-8150CE58B4AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886F2602-CD2D-4D94-B2BB-28C2D851A941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886F2602-CD2D-4D94-B2BB-28C2D851A941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886F2602-CD2D-4D94-B2BB-28C2D851A941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886F2602-CD2D-4D94-B2BB-28C2D851A941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
