@@ -42,6 +42,7 @@ namespace EventHandler
                     eventBus.OnDogResponseReceived(new DogResponse(number));
                 }
 
+                
                 await Task.Delay(1000);
             }
         }
