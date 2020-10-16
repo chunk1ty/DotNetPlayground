@@ -6,6 +6,7 @@ namespace EventHandler
 {
     class Program
     {
+        
         static async Task Main(string[] args)
         {
             EventBus eventBus = new EventBus();
