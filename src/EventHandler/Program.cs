@@ -7,10 +7,12 @@ namespace EventHandler
         static void Main(string[] args)
         {
             MyEventBus myEventBus = new MyEventBus();
-            // myEventBus.MessageHandler += (sender, messageArgs) => Console.WriteLine($"Process message: {messageArgs}.");
-            // myEventBus.SubscribeEventHandler();
+
+            // attach event handler
+            myEventBus.MessageReceived += (sender, messageArgs) => Console.WriteLine($"Process message: {messageArgs}.");
+            myEventBus.SubscribeForMyMessage();
             
-            myEventBus.SubscribeAction((x => Console.WriteLine($"Process message: {x}")));
+            // myEventBus.SubscribeAction((x => Console.WriteLine($"Process message: {x}")));
 
             Console.ReadKey();
         }

@@ -3,26 +3,21 @@ using System.Threading.Tasks;
 
 namespace EventHandler
 {
-    public class MessageArgs : EventArgs
-    {
-        public MessageArgs(int id)
-        {
-            Id = id;
-        }
-
-        public int Id { get; }
-
-        public override string ToString()
-        {
-            return $"Message {{Id: {Id}}}";
-        }
-    }
-
     public class MyEventBus
     {
-        public event EventHandler<MessageArgs> MessageHandler;
+        // define event (full declaration)
+        // private EventHandler<MyMessageArgs> _messageReceived;
+        //
+        // public event EventHandler<MyMessageArgs> MessageReceived
+        // {
+        //     add => _messageReceived += value;
+        //     remove => _messageReceived -= value;
+        // }
 
-        public void SubscribeEventHandler()
+        // define event (short declaration)
+        public event EventHandler<MyMessageArgs> MessageReceived;
+        
+        public void SubscribeForMyMessage()
         {
             Task.Run(async () => await PublishMessages());   
         }
@@ -33,27 +28,28 @@ namespace EventHandler
 
             while (true)
             {
-                var message = new MessageArgs(random.Next());
+                var message = new MyMessageArgs(random.Next());
 
                 Console.WriteLine(message);
-                MessageHandler?.Invoke(this, message);
+                // raise event
+                MessageReceived?.Invoke(this, message);
 
                 await Task.Delay(2000);
             }
         }
         
-        public void SubscribeAction(Action<MessageArgs> action)
+        public void SubscribeAction(Action<MyMessageArgs> action)
         {
             Task.Run(async () => await PublishMessages1(action));   
         }
         
-        private async Task PublishMessages1(Action<MessageArgs> action)
+        private async Task PublishMessages1(Action<MyMessageArgs> action)
         {
             Random random = new Random();
 
             while (true)
             {
-                var message = new MessageArgs(random.Next());
+                var message = new MyMessageArgs(random.Next());
 
                 Console.WriteLine(message);
                 action(message);
